@@ -8,17 +8,14 @@
 
 
     <div id="growler">
-      <select multiple
-        v-model="selectedSearchIndexes">
-        <option value="beers">Beers</option>
-        <option value="breweries">Breweries</option>
-        <option value="distilleries">Distilleries</option>
-        <option value="pubs">Pubs</option>
-      </select>
-
-      <small>
-        selected: {{ selectedSearchIndexes }}
-      </small>
+      <form>
+        <input v-model="query" type="search"
+          placeholder="search...">
+        <button type="button"
+          v-on:click="executeSearch('token', $event)">
+          Search
+        </button>
+      </form>
     </div>
 
     <script src="/bundle.js"></script>
