@@ -8,7 +8,8 @@
 
 
     <div id="growler">
-      <select v-model="selectedSearchIndex">
+      <select multiple
+        v-model="selectedSearchIndexes">
         <option value="beers">Beers</option>
         <option value="breweries">Breweries</option>
         <option value="distilleries">Distilleries</option>
@@ -16,7 +17,7 @@
       </select>
 
       <small>
-        selected: {{ selectedSearchIndex }}
+        selected: {{ selectedSearchIndexes }}
       </small>
     </div>
 
