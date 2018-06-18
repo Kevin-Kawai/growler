@@ -5,22 +5,18 @@
     <title>title</title>
   </head>
   <body>
-    <div id="growler">
-      <label class="form-check-label">
-        <input
-          type="radio" value="beers"
-          v-model="searchIndex">
-        Beers
-      </label>
 
-      <label>
-        <input
-          type="radio" value="breweries"
-          v-model="searchIndex">
-          Breweries
-      </label>
+
+    <div id="growler">
+      <select v-model="selectedSearchIndex">
+        <option value="beers">Beers</option>
+        <option value="breweries">Breweries</option>
+        <option value="distilleries">Distilleries</option>
+        <option value="pubs">Pubs</option>
+      </select>
+
       <small>
-        selected: {{ searchIndex }}
+        selected: {{ selectedSearchIndex }}
       </small>
     </div>
 
