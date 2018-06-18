@@ -1,7 +1,9 @@
-import "../css/style.scss"
-import React from 'react';
-import { render } from 'react-dom';
+import Vue from 'vue/dist/vue.js'
 
-import Component from './Component';
-
-render(<Component name='kevin' />, document.getElementById('root'));
+let growler = new Vue({
+  el: '#growler',
+  data: {
+    appName: "<h1>hello world</h1>",
+    color: '#FF6A00'
+  }
+});

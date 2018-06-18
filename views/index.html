@@ -5,8 +5,11 @@
     <title>title</title>
   </head>
   <body>
-
-    <div id='root'></div>
+    <div id="growler">
+      <h2 v-bind:style="{ color:color }">
+        {{ appName }}
+      </h2>
+    </div>
     <script src="/bundle.js"></script>
   </body>
 </html>
