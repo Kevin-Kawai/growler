@@ -6,11 +6,24 @@
   </head>
   <body>
     <div id="growler">
-      <input
-        v-model="query"
-        placeholder="Search...">
+      <label>
+        <input
+          type="checkbox" value="beers"
+          v-model="searchIndexs">
+        Beers
+      </label>
       <br />
-      <div>Searching for: {{ query }}</div>
+
+      <label>
+        <input
+          type="checkbox" value="breweries"
+          v-model="searchIndexs">
+        Breweries
+      </label>
+
+      <small>
+        selected: {{ searchIndexs }}
+      </small>
     </div>
     <script src="/bundle.js"></script>
   </body>
