@@ -6,25 +6,24 @@
   </head>
   <body>
     <div id="growler">
-      <label>
+      <label class="form-check-label">
         <input
-          type="checkbox" value="beers"
-          v-model="searchIndexs">
+          type="radio" value="beers"
+          v-model="searchIndex">
         Beers
       </label>
-      <br />
 
       <label>
         <input
-          type="checkbox" value="breweries"
-          v-model="searchIndexs">
-        Breweries
+          type="radio" value="breweries"
+          v-model="searchIndex">
+          Breweries
       </label>
-
       <small>
-        selected: {{ searchIndexs }}
+        selected: {{ searchIndex }}
       </small>
     </div>
+
     <script src="/bundle.js"></script>
   </body>
 </html>
