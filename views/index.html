@@ -8,10 +8,13 @@
 
 
     <div id="growler">
-      <form action='#' method="GET">
-        <input v-model="query" id="query" name="query" />
-        <button type="Submit"
-          v-on:click.prevent="executeSearch">
+      <form action="someUrl" method="POST">
+        <input type="search"
+          v-model="query"
+          v-bind:disabled="isRunning" />
+        <button type="button"
+          v-on:click.once="executeSearch"
+          v-bind:disabled.once="isRunning">
           Search
         </button>
       </form>
