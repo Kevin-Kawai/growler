@@ -6,9 +6,12 @@ let growler = new Vue({
     query: ''
   },
   methods: {
-    executeSearch:function(t, e) {
-      var msg = 'Token: ' + ' Query: ' + this.query + ' Button: ' + event.target.innerText;
-    alert(msg);
+    executeSearch: function() {
+      if (this.query) {
+        document.forms[0].submit();
+      } else {
+        alert('Please enter a query');
+      }
     }
   }
 });
