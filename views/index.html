@@ -9,8 +9,11 @@
 
     <div id="growler">
       <ul>
-        <li v-for="(v, k, i) in user">
-          {{ i }}: {{ k }} - {{ v }}
+        <li v-for="(page, i) in pages">
+          <a v-bind:href="page.url">
+            {{ page.number }}
+          </a>
+          <small>i: {{ i }}</small>
         </li>
       </ul>
     </div>

@@ -3,14 +3,10 @@ import Vue from 'vue/dist/vue.js'
 let growler = new Vue({
   el: '#growler',
   data: {
-    user: {
-      firstName: 'Chad',
-      fingers: 10,
-      tags: ['male', 'scorpio'],
-      socialMedia: {
-        twitter: '@ecofic',
-        youtube: 'ecofic'
-      }
-    }
+    pages: [
+      { number: 1, url: '?page=1' },
+      { number: 2, url: '?page=2' },
+      { number: 3, url: '?page=3' }
+    ]
   }
 });
