@@ -7,8 +7,11 @@
   <body>
 
     <div id="growler">
-      <div>
-        Online? {{ isOnline }}
+      <div v-for="result in results">
+        <div>{{ result.name }}</div>
+        <small class="text-muted">
+          {{ result.ibu | convertIBU('--') }}
+        </small>
       </div>
     </div>
 

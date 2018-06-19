@@ -3,17 +3,17 @@ import axios from 'axios'
 
 let growler = new Vue({
   el: '#growler',
-  data: { canConnect: false },
-  computed: {
-    isOnline: function() {
-      return this.canConnect ? 'Yes' : 'No';
-    }
+  data: {
+    results: [
+      {name: 'Ahool Ale', ibu:'33 i.b.u.'}
+    ]
   },
-  created: function() {
-    axios.get('https://www.ecofic.com').then(function (res) {
-      growler.canConnect = true;
-    }).catch(function (err) {
-      growler.canConnect = false;
-    })
+  filters: {
+    convertIBU: function(value, empty) {
+      if (!value) { return empty; }
+      value = value.toString();
+      value = value.replace(/\./g, '');
+      return value.toUpperCase();
+    }
   }
 });
