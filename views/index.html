@@ -8,16 +8,11 @@
 
 
     <div id="growler">
-      <form action="someUrl" method="POST">
-        <input type="search"
-          v-model="query"
-          v-bind:disabled="isRunning" />
-        <button type="button"
-          v-on:click.once="executeSearch"
-          v-bind:disabled.once="isRunning">
-          Search
-        </button>
-      </form>
+      <ul>
+        <li v-for="(v, k) in currentUser">
+          {{ k }} - {{ v }}
+        </li>
+      </ul>
     </div>
 
     <script src="/bundle.js"></script>
