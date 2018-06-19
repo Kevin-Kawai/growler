@@ -6,15 +6,19 @@
   </head>
   <body>
 
-
     <div id="growler">
-      <div v-for="page in pages">
-        <b>Page: {{ page.number }}</b>
-        <div v-for="sec in page.sections">
-          {{ page.number }}-{{ sec }}
-        </div>
-        <br />
+      <div>
+        <label><strong>Max Alcohol by Volume (a.b.v.)</strong></label>
+        <input type="range" v-model="maxAbv" min="0" max="100" />
+        <small>{{ maxAbv }}%</small>
       </div>
+
+      <ul>
+        <li><strong>Beers</strong></li>
+        <li v-for="beer in beers" v-if="beer.abv < maxAbv">
+          {{ beer }}
+        </li>
+      </ul>
     </div>
 
     <script src="/bundle.js"></script>
