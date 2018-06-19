@@ -7,25 +7,9 @@
   <body>
 
     <div id="growler">
-      <table>
-        <tr>
-          <th>Beer</th>
-          <th>Price</th>
-          <th></th>
-        </tr>
-
-        <tr v-for="beer in beers">
-          <td>{{ beer.name }}</td>
-          <td>{{ beer.price }}</td>
-          <td><button :click="buy(beer)">buy</button</td>
-        </tr>
-
-        <tr>
-          <td>Subtotal</td>
-          <td>{{ subTotal }}</td>
-          <td></td>
-        </tr>
-      </table>
+      <div>
+        Online? {{ isOnline }}
+      </div>
     </div>
 
     <script src="/bundle.js"></script>

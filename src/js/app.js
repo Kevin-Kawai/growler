@@ -1,31 +1,19 @@
 import Vue from 'vue/dist/vue.js'
+import axios from 'axios'
 
 let growler = new Vue({
   el: '#growler',
-  data: {
-    beers: [
-      {name: 'Ahool Ale', price: 2.80},
-      {name: 'Agogwe Ale', price: 2.38}
-    ],
-    shoppingCart: [],
-    subTotal: 0.00
-  },
-  watch: {
-    shoppingCart: function() {
-      this.updateSubTotal();
+  data: { canConnect: false },
+  computed: {
+    isOnline: function() {
+      return this.canConnect ? 'Yes' : 'No';
     }
   },
-  methods: {
-    updateSubTotal: function() {
-      var s = this.shoppingCart.length;
-      var t = 0;
-      for (var i=0; i<s; i++) {
-        t += this.shoppingCart[i].price;
-      }
-      this.subTotal = t;
-    },
-    buy: function(beer) {
-      this.shoppingCart.push(beer);
-    }
+  created: function() {
+    axios.get('https://www.ecofic.com').then(function (res) {
+      growler.canConnect = true;
+    }).catch(function (err) {
+      growler.canConnect = false;
+    })
   }
 });
