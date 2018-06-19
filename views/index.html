@@ -8,14 +8,13 @@
 
 
     <div id="growler">
-      <ul>
-        <li v-for="(page, i) in pages">
-          <a v-bind:href="page.url">
-            {{ page.number }}
-          </a>
-          <small>i: {{ i }}</small>
-        </li>
-      </ul>
+      <div v-for="page in pages">
+        <b>Page: {{ page.number }}</b>
+        <div v-for="sec in page.sections">
+          {{ page.number }}-{{ sec }}
+        </div>
+        <br />
+      </div>
     </div>
 
     <script src="/bundle.js"></script>
