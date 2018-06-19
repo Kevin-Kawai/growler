@@ -11,8 +11,12 @@ let growler = new Vue({
   filters: {
     convertIBU: function(value, empty) {
       if (!value) { return empty; }
-      value = value.toString();
-      value = value.replace(/\./g, '');
+      return value.toString();
+    },
+    removePeriods: function(value) {
+      return value.replace(/\./g, '');
+    },
+    toUpperCase: function(value) {
       return value.toUpperCase();
     }
   }

@@ -9,9 +9,10 @@
     <div id="growler">
       <div v-for="result in results">
         <div>{{ result.name }}</div>
-        <small class="text-muted">
-          {{ result.ibu | convertIBU('--') }}
-        </small>
+        <small>{{ result.ibu |
+           convertIBU('--') |
+           removePeriods |
+           toUpperCase}}</small>
       </div>
     </div>
 
