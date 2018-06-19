@@ -9,8 +9,8 @@
 
     <div id="growler">
       <ul>
-        <li v-for="(v, k) in currentUser">
-          {{ k }} - {{ v }}
+        <li v-for="(v, k, i) in user">
+          {{ i }}: {{ k }} - {{ v }}
         </li>
       </ul>
     </div>
