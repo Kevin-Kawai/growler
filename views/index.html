@@ -7,18 +7,25 @@
   <body>
 
     <div id="growler">
-      <div>
-        <label><strong>Max Alcohol by Volume (a.b.v.)</strong></label>
-        <input type="range" v-model="maxAbv" min="0" max="100" />
-        <small>{{ maxAbv }}%</small>
-      </div>
+      <table>
+        <tr>
+          <th>Beer</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
 
-      <ul>
-        <li><strong>Beers</strong></li>
-        <li v-for="beer in beers" v-if="beer.abv < maxAbv">
-          {{ beer }}
-        </li>
-      </ul>
+        <tr v-for="beer in beers">
+          <td>{{ beer.name }}</td>
+          <td>{{ beer.price }}</td>
+          <td><button :click="buy(beer)">buy</button</td>
+        </tr>
+
+        <tr>
+          <td>Subtotal</td>
+          <td>{{ subTotal }}</td>
+          <td></td>
+        </tr>
+      </table>
     </div>
 
     <script src="/bundle.js"></script>

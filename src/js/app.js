@@ -4,12 +4,28 @@ let growler = new Vue({
   el: '#growler',
   data: {
     beers: [
-      {name: 'Tikibalang Barley Wine', abv: 9.6},
-      {name: 'Hyote Chocolate Stout', abv: 7.4},
-      {name: 'Pope Lick Porter', abv: 6.5},
-      {name: 'Ahool Ale ', abv: 5.4},
-      {name: 'North Adjule Lager', abv: 3.7},
+      {name: 'Ahool Ale', price: 2.80},
+      {name: 'Agogwe Ale', price: 2.38}
     ],
-    maxAbv: 7.0
+    shoppingCart: [],
+    subTotal: 0.00
+  },
+  watch: {
+    shoppingCart: function() {
+      this.updateSubTotal();
+    }
+  },
+  methods: {
+    updateSubTotal: function() {
+      var s = this.shoppingCart.length;
+      var t = 0;
+      for (var i=0; i<s; i++) {
+        t += this.shoppingCart[i].price;
+      }
+      this.subTotal = t;
+    },
+    buy: function(beer) {
+      this.shoppingCart.push(beer);
+    }
   }
 });
